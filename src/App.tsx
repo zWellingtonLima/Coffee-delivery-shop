@@ -1,5 +1,7 @@
-import "./App.css";
+import { MainContainer } from "./App";
+import "./App.ts";
 import { Header } from "./components/Header/index";
+import { Hero } from "./components/Hero/index.tsx";
 import { GlobalStyle } from "./styles/global";
 
 function App() {
@@ -7,8 +9,9 @@ function App() {
     <>
       <GlobalStyle />
       <Header />
-
-      <main></main>
+      <MainContainer>
+        <Hero />
+      </MainContainer>
     </>
   );
 }

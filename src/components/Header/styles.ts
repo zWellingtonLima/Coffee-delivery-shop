@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { mixins } from "../../styles/mixins";
 
 export const Header = styled.header`
-  max-width: 90rem;
+  max-width: 70rem;
 
   display: flex;
   justify-content: space-between;
@@ -25,7 +25,7 @@ export const UserLocation = styled(BaseStyles)`
   justify-content: space-between;
   gap: 4px;
 
-  font: ${mixins.fonts.textS};
+  ${mixins.fonts.textS};
 
   color: ${(props) => props.theme.colors["purple"]};
 
