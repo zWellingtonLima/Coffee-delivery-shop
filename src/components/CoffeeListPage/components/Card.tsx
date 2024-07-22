@@ -1,5 +1,6 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
-import { getCoffeeList } from "../../../utils/getCoffeeList";
+import { coffees as coffeeList } from "../../../../data.json";
+
 import {
   AddToCartBtn,
   BadgesContainer,
@@ -13,8 +14,6 @@ import {
 } from "./styles";
 
 export function Card() {
-  const coffeeList = getCoffeeList();
-
   return (
     <>
       {coffeeList.map((coffee) => (
@@ -23,7 +22,7 @@ export function Card() {
           <BadgesContainer>
             {coffee.badges.length > 1 ? (
               coffee.badges.map((badge) => (
-                <CoffeeBadge key={coffee.imgSrc}>{badge}</CoffeeBadge>
+                <CoffeeBadge key={coffee.description}>{badge}</CoffeeBadge>
               ))
             ) : (
               <CoffeeBadge>{coffee.badges}</CoffeeBadge>
@@ -47,7 +46,7 @@ export function Card() {
                 </button>
               </QuantityInput>
               <AddToCartBtn>
-                <ShoppingCart weight="fill" size={22}/>
+                <ShoppingCart weight="fill" size={22} />
               </AddToCartBtn>
             </Order>
           </CartCard>

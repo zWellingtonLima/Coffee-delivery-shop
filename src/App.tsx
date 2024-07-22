@@ -1,20 +1,16 @@
-import { MainContainer } from "./App";
+import { BrowserRouter } from "react-router-dom";
 import "./App.ts";
-import { CoffeeListPage } from "./components/CoffeeListPage/index.tsx";
 import { Header } from "./components/Header/index";
-import { Hero } from "./components/Hero/index.tsx";
+import { Router } from "./components/Router.tsx";
 import { GlobalStyle } from "./styles/global";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <GlobalStyle />
       <Header />
-      <MainContainer>
-        <Hero />
-        <CoffeeListPage />
-      </MainContainer>
-    </>
+      <Router />
+    </BrowserRouter>
   );
 }
 
