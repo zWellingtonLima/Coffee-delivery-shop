@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 
 import {
@@ -24,6 +25,35 @@ interface CardProps {
 }
 
 export function Card({ coffee }: CardProps) {
+  const [coffeeQuantity, setCoffeeQuantity] = useState(1);
+  const [coffeePrice, setCoffeePrice] = useState(coffee.price);
+
+  const increaseCoffeeAmount = () => {
+    setCoffeeQuantity((state) => state + 1);
+    handleCoffeePrice("plus");
+  };
+
+  const decreaseCoffeeAmount = () => {
+    if (coffeeQuantity === 1) return;
+
+    setCoffeeQuantity((state) => state - 1);
+    handleCoffeePrice("minus");
+  };
+
+  const handleCoffeePrice = (operation: "plus" | "minus") => {
+    const coffeeFixedPrice = 9.9;
+
+    if (operation === "minus") {
+      setCoffeePrice((state) => (state -= coffeeFixedPrice));
+    } else {
+      setCoffeePrice((state) => (state += coffeeFixedPrice));
+    }
+  };
+
+  const handleAddCoffee = () => {
+
+  }
+
   return (
     <CardContainer>
       <img src={coffee.imgSrc} alt={coffee.title} />
@@ -37,19 +67,19 @@ export function Card({ coffee }: CardProps) {
 
       <CartCard>
         <Price>
-          R$ <span>{`${coffee.price}0`}</span>
+          R$ <span>{coffeePrice.toFixed(2)}</span>
         </Price>
         <Order>
           <QuantityInput>
-            <button>
+            <button onClick={decreaseCoffeeAmount}>
               <Minus size={22} />
             </button>
-            <span>1</span>
-            <button>
+            <span>{coffeeQuantity}</span>
+            <button onClick={increaseCoffeeAmount}>
               <Plus size={22} />
             </button>
           </QuantityInput>
-          <AddToCartBtn>
+          <AddToCartBtn onClick={handleAddCoffee}>
             <ShoppingCart weight="fill" size={22} />
           </AddToCartBtn>
         </Order>
