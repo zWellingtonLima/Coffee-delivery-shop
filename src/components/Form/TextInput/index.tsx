@@ -41,9 +41,9 @@ export const TextInput = forwardRef(function TextInput(
           {...rest}
           onFocus={handleFocus}
           onBlur={handleBlur}
-        >
+        />
           {optional ? <span>Opcional</span> : null}
-        </input>
+        
       </Container>
 
       {error?.message ? (
