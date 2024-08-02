@@ -5,11 +5,14 @@ import {
   CartContainer,
   Header as HeaderContainer,
 } from "./styles";
+import { Link } from "react-router-dom";
 
 export function Header() {
   return (
     <HeaderContainer>
-      <img src="/logo.svg" alt="Coffee Delivery icon" />
+      <Link to={"/"}>
+        <img src="/logo.svg" alt="Coffee Delivery icon" />
+      </Link>
       <div>
         <UserLocation>
           <MapPin size={22} weight="fill" />
