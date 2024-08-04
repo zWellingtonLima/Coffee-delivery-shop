@@ -12,6 +12,11 @@ export const Header = styled.header`
   > div {
     display: flex;
   }
+
+  div a {
+    display: flex;
+    margin-left: 12px;
+  }
 `;
 
 const BaseStyles = styled.div`
@@ -37,13 +42,35 @@ export const UserLocation = styled(BaseStyles)`
 
 export const CartContainer = styled(BaseStyles)`
   background: ${(props) => props.theme.colors["yellow-light"]};
-
-  display: flex;
-  justify-content: center;
-  line-height: 0;
-  margin-left: 12px;
+  position: relative;
 
   svg {
     color: ${(props) => props.theme.colors["yellow-dark"]};
+  }
+
+  &[aria-disabled="true"] {
+    pointer-events: none;
+  }
+
+  a {
+    display: flex;
+  }
+
+  span {
+    ${mixins.fonts.textS};
+    font-weight: bold;
+    color: ${(props) => props.theme.colors.white};
+    background-color: ${(props) => props.theme.colors["yellow-dark"]};
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translate(50%, -50%);
   }
 `;
