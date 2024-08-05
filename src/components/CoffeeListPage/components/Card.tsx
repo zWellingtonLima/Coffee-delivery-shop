@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Minus, Plus, ShoppingCart } from "phosphor-react";
+import { useEffect, useState } from "react";
+import { ShoppingCart } from "phosphor-react";
 
 import {
   AddToCartBtn,
@@ -10,10 +10,11 @@ import {
   CoffeeTitle,
   Order,
   Price,
-  QuantityInput,
 } from "./styles";
+import { QuantityInput } from "../../Form/QuantityInput";
+import { useCart } from "../../../hooks/useCart";
 
-interface CardProps {
+export interface CardProps {
   coffee: {
     id: string;
     title: string;
@@ -25,41 +26,48 @@ interface CardProps {
 }
 
 export function Card({ coffee }: CardProps) {
-  const [coffeeQuantity, setCoffeeQuantity] = useState(1);
-  const [coffeePrice, setCoffeePrice] = useState(coffee.price);
+  const [quantity, setQuantity] = useState(1);
+  const [isItemAdded, setIsItemAdded] = useState(false);
+  const { addItem } = useCart();
 
-  const increaseCoffeeAmount = () => {
-    setCoffeeQuantity((state) => state + 1);
-    handleCoffeePrice("plus");
-  };
-
-  const decreaseCoffeeAmount = () => {
-    if (coffeeQuantity === 1) return;
-
-    setCoffeeQuantity((state) => state - 1);
-    handleCoffeePrice("minus");
-  };
-
-  const handleCoffeePrice = (operation: "plus" | "minus") => {
-    const coffeeFixedPrice = 9.9;
-
-    if (operation === "minus") {
-      setCoffeePrice((state) => (state -= coffeeFixedPrice));
-    } else {
-      setCoffeePrice((state) => (state += coffeeFixedPrice));
-    }
-  };
-
-  const handleAddCoffee = () => {
-
+  function incrementQuantity() {
+    setQuantity((state) => state + 1);
   }
+
+  function decrementQuantity() {
+    if (quantity > 1) {
+      setQuantity((state) => state - 1);
+    }
+  }
+
+  function handleAddItem() {
+    addItem({ id: coffee.id, quantity });
+    setIsItemAdded(true);
+    setQuantity(1);
+  }
+
+  useEffect(() => {
+    let timeout: number;
+
+    if (isItemAdded) {
+      timeout = setTimeout(() => {
+        setIsItemAdded(false);
+      }, 1000);
+    }
+
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+    };
+  }, [isItemAdded]);
 
   return (
     <CardContainer>
       <img src={coffee.imgSrc} alt={coffee.title} />
       <BadgesContainer>
         {coffee.badges.map((badge) => (
-          <CoffeeBadge key={coffee.description}>{badge}</CoffeeBadge>
+          <CoffeeBadge key={badge}>{badge}</CoffeeBadge>
         ))}
       </BadgesContainer>
       <CoffeeTitle>{coffee.title}</CoffeeTitle>
@@ -67,19 +75,15 @@ export function Card({ coffee }: CardProps) {
 
       <CartCard>
         <Price>
-          R$ <span>{coffeePrice.toFixed(2)}</span>
+          R$ <span>{coffee.price.toFixed(2)}</span>
         </Price>
         <Order>
-          <QuantityInput>
-            <button onClick={decreaseCoffeeAmount}>
-              <Minus size={22} />
-            </button>
-            <span>{coffeeQuantity}</span>
-            <button onClick={increaseCoffeeAmount}>
-              <Plus size={22} />
-            </button>
-          </QuantityInput>
-          <AddToCartBtn onClick={handleAddCoffee}>
+          <QuantityInput
+            quantity={quantity}
+            decrementQuantity={decrementQuantity}
+            incrementQuantity={incrementQuantity}
+          />
+          <AddToCartBtn onClick={handleAddItem}>
             <ShoppingCart weight="fill" size={22} />
           </AddToCartBtn>
         </Order>
