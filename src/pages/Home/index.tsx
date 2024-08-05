@@ -1,4 +1,4 @@
-import { MainContainer } from "../../App";
+import { MainContainer } from "./styles";
 import { CoffeeListPage } from "../../components/CoffeeListPage";
 import { Hero } from "../../components/Hero";
 
