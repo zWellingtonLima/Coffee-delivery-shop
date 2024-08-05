@@ -1,15 +1,13 @@
 import { BrowserRouter } from "react-router-dom";
-import "./App.ts";
-import { Header } from "./components/Header/index";
-import { Router } from "./components/Router.tsx";
-import { GlobalStyle } from "./styles/global";
+import { Router } from "./Router.tsx";
+import { CartContextProvider } from "./contexts/CartProvider.tsx";
 
 function App() {
   return (
     <BrowserRouter>
-      <GlobalStyle />
-      <Header />
-      <Router />
+      <CartContextProvider>
+        <Router />
+      </CartContextProvider>
     </BrowserRouter>
   );
 }
