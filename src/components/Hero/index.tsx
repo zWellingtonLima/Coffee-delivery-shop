@@ -43,6 +43,8 @@ export function Hero() {
             <span>O café chega fresquinho até você</span>
           </div>
         </BadgeContainer>
+
+        <img src="/images/hero-bg.svg" id="hero-bg" alt="" />
       </HeroInfo>
       <img src="/images/heroCoffee.png" alt="" />
     </HeroContainer>
