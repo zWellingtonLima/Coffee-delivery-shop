@@ -20,7 +20,7 @@ export const HeroContainer = styled.section`
 `;
 
 export const HeroInfo = styled.div`
-  max-width: 36.75rem;
+  min-width: 36.75rem;
 
   > p {
     ${mixins.fonts.textL}
@@ -37,9 +37,9 @@ export const Title = styled.h1`
 
 export const BadgeContainer = styled.div`
   display: grid;
-  grid-template: auto / auto auto;
+  grid-template-columns: repeat(2, 1fr);
   margin-top: 4.125rem;
-  gap: 1.25rem 2.5rem;
+  gap: 1.25rem 0;
 
   > div {
     display: flex;

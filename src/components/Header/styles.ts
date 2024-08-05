@@ -6,7 +6,7 @@ export const Header = styled.header`
 
   display: flex;
   justify-content: space-between;
-  padding: 2rem 0;
+  padding: 2rem 1.25rem;
   margin: 0 auto;
 
   > div {
