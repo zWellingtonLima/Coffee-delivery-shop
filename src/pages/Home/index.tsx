@@ -1,12 +1,12 @@
-import { MainContainer } from "./styles";
 import { CoffeeListPage } from "../../components/CoffeeListPage";
 import { Hero } from "../../components/Hero";
+import { Container } from "./styles";
 
 export function Home() {
   return (
-    <MainContainer>
+    <Container>
       <Hero />
       <CoffeeListPage />
-    </MainContainer>
+    </Container>
   );
 }

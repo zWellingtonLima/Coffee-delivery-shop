@@ -2,21 +2,21 @@ import styled from "styled-components";
 import { mixins } from "../../styles/mixins";
 
 export const HeroContainer = styled.section`
-  position: relative;
-
-  img#hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-height: 544px;
-    width: 100vw;
-    object-fit: cover;
-  }
-
   display: flex;
   justify-content: space-between;
   gap: 3.5rem;
   padding: 5.75rem 1.25rem;
+  
+  img#hero-bg {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 544px;
+    width: 98vw;
+    object-fit: cover;
+    pointer-events: none;
+  }
 `;
 
 export const HeroInfo = styled.div`

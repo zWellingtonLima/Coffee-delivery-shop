@@ -16,6 +16,10 @@ export const Header = styled.header`
   div a {
     display: flex;
     margin-left: 12px;
+
+    &[aria-disabled="true"] {
+      pointer-events: none;
+    }
   }
 `;
 
@@ -46,10 +50,6 @@ export const CartContainer = styled(BaseStyles)`
 
   svg {
     color: ${(props) => props.theme.colors["yellow-dark"]};
-  }
-
-  &[aria-disabled="true"] {
-    pointer-events: none;
   }
 
   a {
