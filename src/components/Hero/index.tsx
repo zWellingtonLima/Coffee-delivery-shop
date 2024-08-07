@@ -46,7 +46,7 @@ export function Hero() {
 
         <img src="/images/hero-bg.svg" id="hero-bg" alt="" />
       </HeroInfo>
-      <img src="/images/heroCoffee.png" alt="" />
+      <img src="/heroCoffee.png" alt="" />
     </HeroContainer>
   );
 }
