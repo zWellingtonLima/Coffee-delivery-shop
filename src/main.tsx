@@ -1,16 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import { ThemeProvider } from "styled-components";
-import { defaultTheme } from "./styles/themes/default.ts";
-import { GlobalStyle } from "./styles/global.ts";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Home } from "./pages/Home/index.tsx";
+import { CartPage } from "./pages/Cart/index.tsx";
+import { Success } from "./pages/Success/index.tsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
+      },
+      {
+        path: "/order/:orderId/success",
+        element: <Success />,
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ThemeProvider theme={defaultTheme}>
-      <GlobalStyle />
-
-      <App />
-    </ThemeProvider>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
