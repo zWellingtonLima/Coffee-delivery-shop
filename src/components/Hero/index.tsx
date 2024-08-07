@@ -44,9 +44,9 @@ export function Hero() {
           </div>
         </BadgeContainer>
 
-        <img src="/hero-bg.svg" id="hero-bg" alt="" />
+        <img src="/src/assets/hero-bg.svg" id="hero-bg" alt="" />
       </HeroInfo>
-      <img src="/heroCoffee.png" alt="" />
+      <img src="/src/assets/heroCoffee.png" alt="" />
     </HeroContainer>
   );
 }

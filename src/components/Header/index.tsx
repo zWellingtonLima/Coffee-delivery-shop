@@ -14,7 +14,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <Link to={"/"}>
-        <img src="/logo.svg" alt="Coffee Delivery icon" />
+        <img src="/src/assets/logo.svg" alt="Coffee Delivery icon" />
       </Link>
       <div>
         <UserLocation>
