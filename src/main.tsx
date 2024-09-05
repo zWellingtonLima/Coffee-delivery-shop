@@ -8,19 +8,19 @@ import { Success } from "./pages/Success/index.tsx";
 
 const router = createBrowserRouter([
   {
-    path: "/Coffee-delivery-shop",
+    path: "/",
     element: <App />,
     children: [
       {
-        path: "/Coffee-delivery-shop",
+        path: "/",
         element: <Home />,
       },
       {
-        path: "/Coffee-delivery-shop/cart",
+        path: "/cart",
         element: <CartPage />,
       },
       {
-        path: "/Coffee-delivery-shop/order/:orderId/success",
+        path: "/order/:orderId/success",
         element: <Success />,
       },
     ],

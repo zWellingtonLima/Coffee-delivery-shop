@@ -13,7 +13,7 @@ export function Header() {
 
   return (
     <HeaderContainer>
-      <Link to="/Coffee-delivery-shop">
+      <Link to="/">
         <img src="./images/brand.png" alt="Logo do Coffee Delivery" />
       </Link>
       <div>
@@ -21,7 +21,7 @@ export function Header() {
           <MapPin size={22} weight="fill" />
           <span>Espinho, PT</span>
         </UserLocation>
-        <Link to={"/Coffee-delivery-shop/cart"} aria-disabled={cart.length === 0} title="Carrinho de compras">
+        <Link to={"/cart"} aria-disabled={cart.length === 0} title="Carrinho de compras">
           <CartContainer>
             <ShoppingCart size={22} weight="fill" />
             {cart.length > 0 ? <span>{cart.length}</span> : null}
