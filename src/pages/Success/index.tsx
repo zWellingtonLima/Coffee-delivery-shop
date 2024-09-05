@@ -68,7 +68,7 @@ export function Success() {
         </Info>
       </Order>
 
-      <img src="/src/assets/delivery.svg" alt="Pedido co
+      <img src="/images/delivery.svg" alt="Pedido co
       ncluído" />
     </Container>
   );
