@@ -1,17 +1,21 @@
 {
+  "homepage": "https://zWellingtonLima.github.io/Coffee-delivery-shop",
   "name": "coffee-delivery-shop",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@types/styled-components": "^5.1.34",
+    "gh-pages": "^6.1.1",
     "immer": "^10.1.1",
     "phosphor-react": "^1.4.1",
     "react": "^18.3.1",
