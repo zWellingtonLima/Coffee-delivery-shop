@@ -14,10 +14,10 @@ Possui como principais funcionalidades adicionar ao carrinho, dentre uma varieda
 Já na aba do carrinho, é possível alterar a quantidade dos cafés escolhidos ou removê-los da lista. 
 Finalmente, após o preenchimento do formulário, é apresentado o tempo de estimado e a localidade para onde deverá ser enviado o produto pedido.
 
-### ⚙️ Visualização da página
+## ⚙️ Visualização da página
 **Para visualizar a página** basta clicar no link abaixo.
 
-[Link da aplicação](https://)
+[Link da aplicação](https://coffee-delivery-shop.vercel.app/)
 
 ## 📦 Principais tecnologias usadas:
 
