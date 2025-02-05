@@ -32,6 +32,7 @@ import {
   PaymentHeading,
   PaymentOptions,
 } from "./styles";
+import toast from "react-hot-toast";
 
 type FormInputs = {
   cep: number;
@@ -93,6 +94,7 @@ export function CartPage() {
 
   function handleItemRemove(itemId: string) {
     removeItem(itemId);
+    toast.error("Item removido do carrinho");
   }
 
   function handleItemDecrement(itemId: string) {

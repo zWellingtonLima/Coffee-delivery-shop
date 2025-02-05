@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 import { Header } from "./components/Header/index.tsx";
 import { CartContextProvider } from "./contexts/CartProvider.tsx";
@@ -10,6 +11,7 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
+      <Toaster />
 
       <CartContextProvider>
         <Header />

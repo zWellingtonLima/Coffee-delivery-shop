@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ShoppingCart } from "phosphor-react";
+import { toast } from "react-hot-toast";
 
 import {
   AddToCartBtn,
@@ -44,6 +45,8 @@ export function Card({ coffee }: CardProps) {
     addItem({ id: coffee.id, quantity });
     setIsItemAdded(true);
     setQuantity(1);
+
+    toast.success("Item adicionado ao carrinho");
   }
 
   useEffect(() => {
