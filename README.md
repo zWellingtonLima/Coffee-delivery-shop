@@ -1,6 +1,3 @@
- 
-![Logo](https://i.imgur.com/WZR0wQC.png)
-
 # Coffee Delivery Page
 
 Pequena loja de delivery de café fictícia.
@@ -10,9 +7,7 @@ Pequena loja de delivery de café fictícia.
 Hey, Olá!
 Esta pequena aplicação de loja fictícia de entrega de cafés foi feita para exercitar conceitos básicos de ReactJs e algumas tecnologias do ecossistema que auxiliam esta biblioteca.
 
-Possui como principais funcionalidades adicionar ao carrinho, dentre uma variedade de cafés disponíveis, o produto da escolha do usuário. 
-Já na aba do carrinho, é possível alterar a quantidade dos cafés escolhidos ou removê-los da lista. 
-Finalmente, após o preenchimento do formulário, é apresentado o tempo de estimado e a localidade para onde deverá ser enviado o produto pedido.
+Possui como principais funcionalidades: adicionar cafés ao carrinho de compras; na aba de compras é possível gerenciar a quantidade de cafés e fazer o pedido. 
 
 ## ⚙️ Visualização da página
 **Para visualizar a página** basta clicar no link abaixo.
