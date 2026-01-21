@@ -10,6 +10,7 @@ Esta pequena aplicação de loja fictícia de entrega de cafés foi feita para e
 Possui como principais funcionalidades: adicionar cafés ao carrinho de compras; na aba de compras é possível gerenciar a quantidade de cafés e fazer o pedido. 
 
 ## ⚙️ Visualização da página
+![png](./public/coffee.png)
 **Para visualizar a página** basta clicar no link abaixo.
 
 [Link da aplicação](https://coffee-delivery-shop.vercel.app/)
